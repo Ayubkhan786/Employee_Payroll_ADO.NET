@@ -57,20 +57,19 @@ namespace Emp_Payroll_ADO.NET
         public int UpdateData()
         {
             
-            EmpData Emp = new EmpData();
-            
-            {
+                EmpData Emp = new EmpData();
+           
                 var query = @"UPDATE Emp_Payroll Set Salary = 4000000 where Name = 'Terissa'";
                 SqlCommand cmd = new SqlCommand(query, sql);
                 cmd.CommandType = CommandType.Text;
                 this.sql.Open();
                 
-                    cmd.Parameters.Add("Salary", SqlDbType.BigInt).Value = 4000000;
-                    cmd.ExecuteNonQuery();
+                cmd.Parameters.Add("Salary", SqlDbType.BigInt).Value = 4000000;
+                cmd.ExecuteNonQuery();
                
                 sql.Close();
                 return 400000;
-            }
+           
         }
     }
 }
