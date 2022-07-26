@@ -6,6 +6,7 @@ Console.WriteLine("Welcome to Employee Payroll");
 
 
 Connection con= new Connection();
-string Data = con.RetrieveEmpData();
-Console.WriteLine(Data);
-con.UpdateData();
+//string Data = con.RetrieveEmpData();
+//Console.WriteLine(Data);
+long update =con.UpdateData();
+Console.WriteLine(update);

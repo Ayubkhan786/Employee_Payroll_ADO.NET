@@ -61,8 +61,9 @@ namespace Emp_Payroll_ADO.NET
            
                 var query = @"UPDATE Emp_Payroll Set Salary = 4000000 where Name = 'Terissa'";
                 SqlCommand cmd = new SqlCommand(query, sql);
-                cmd.CommandType = CommandType.Text;
-                this.sql.Open();
+               this.sql.Open();
+               cmd.CommandType = CommandType.Text;
+                
                 
                 cmd.Parameters.Add("Salary", SqlDbType.BigInt).Value = 4000000;
                 cmd.ExecuteNonQuery();
