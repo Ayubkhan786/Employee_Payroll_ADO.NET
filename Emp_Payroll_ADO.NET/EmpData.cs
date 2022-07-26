@@ -13,15 +13,15 @@ namespace Emp_Payroll_ADO.NET
         public string Name { get; set; }
         public double Salary { get; set; }
         public DateTime StartDate { get; set; }
-        public char Gender { get; set; }
+        public string Gender { get; set; }
         public string Department { get; set; }
-        public double PhoneNumber { get; set; }
+        public long PhoneNumber { get; set; }
         public string Address { get; set; }
-        public double BasicPay { get; set; }
-        public double Deduction { get; set; }
-        public double TaxablePay { get; set; }
-        public double IncomeTax { get; set; }
-        public double NetPay { get; set; }
+        public long BasicPay { get; set; }
+        public long Deduction { get; set; }
+        public long TaxablePay { get; set; }
+        public long IncomeTax { get; set; }
+        public long NetPay { get; set; }
     }
 }
 
