@@ -11,5 +11,9 @@ Connection con= new Connection();
 //long Update = con.UpdateData();
 //Console.WriteLine(Update);
 
-string Data = con.RetrieveDataByName();
+//string Data = con.RetrieveDataByName();
+//Console.WriteLine(Data);
+
+
+string Data = con.RetrieveFromDate();
 Console.WriteLine(Data);

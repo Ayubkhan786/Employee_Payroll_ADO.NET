@@ -117,6 +117,49 @@ namespace Emp_Payroll_ADO.NET
             }
             return EmpModel.Name;
         }
+        public string RetrieveFromDate()
+        {
+            EmpData EmpModel = new EmpData();
+            var query = @"SELECT * FROM Emp_Payroll Where StartDate BETWEEN CAST('12-12-2020' AS date) AND ('10/11/2019')";
+            SqlCommand command = new SqlCommand(query, sql);
+            sql.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            try
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+
+                        EmpModel.EmpId = reader.GetInt32(0);
+                        EmpModel.Name = reader.GetString(1);
+                        EmpModel.Salary = reader.GetInt64(8);
+                        EmpModel.StartDate = reader.GetDateTime(3);
+                        EmpModel.Gender = reader.GetString(4);
+                        EmpModel.Department = reader.GetString(5);
+                        EmpModel.PhoneNumber = reader.GetInt64(6);
+                        EmpModel.Address = reader.GetString(7);
+                        EmpModel.BasicPay = reader.GetInt64(8);
+                        EmpModel.Deduction = reader.GetInt64(9);
+                        EmpModel.TaxablePay = reader.GetInt64(10);
+                        EmpModel.IncomeTax = reader.GetInt64(11);
+                        EmpModel.NetPay = reader.GetInt64(12);
+                        Console.WriteLine(" EmpId: " + EmpModel.EmpId + " Name: " + EmpModel.Name + " Salary: " + EmpModel.Salary + " Start Date: " + EmpModel.StartDate + " Gender: " + EmpModel.Gender + " PhoneNumber: " + EmpModel.PhoneNumber + " Address: " + EmpModel.Address + " Department: " + EmpModel.Department + " Basic Pay: " + EmpModel.BasicPay + " Deductios: " + EmpModel.Deduction + "Taxable Pay: " + EmpModel.TaxablePay + " Income Tax:" + EmpModel.IncomeTax + " Net Pay: " + EmpModel.NetPay);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No data");
+                }
+                reader.Close();
+                this.sql.Close();
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            return EmpModel.Name;
+        }
     }
 }
 
